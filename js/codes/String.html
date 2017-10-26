@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+        //length属性：
+        var str = "John";        
+        document.write(str.length);
+        document.write("<hr>");
+
+        //----------与html相关的方法-----------
+        //bold()方法：
+        document.write(str.bold());
+        document.write("<hr>");
+        //fontcolor()方法：
+        document.write(str.fontcolor("ff0000"));
+        document.write("<hr>");
+        //fontsize()方法：
+        document.write(str.fontsize(7));
+        document.write("<hr>");
+        //link()方法：
+        var str1 = "百度";
+        document.write(str1.link("http://www.baidu.com"));
+        document.write("<hr>");
+        //sub()方法：
+        var strx = "H";
+        var str2 = "2";
+        document.write(strx + str2.sub());
+        document.write("<hr>");
+        //sup()方法：
+        var str3 = "+";
+        document.write(strx + str3.sup());
+        document.write("<hr>");
+
+        //----------与Java相似的方法-----------
+        //concat()方法
+        var str21 = "Jayden ";
+        var str22 = "Soong";
+        document.write(str21.concat(str22));
+        document.write("<hr>");
+        //charAt()方法
+        document.write(str.charAt(2));
+        document.write("<hr>");
+        document.write(str.charAt(4)); //位置不存在，返回空字符串
+        document.write("<hr>");
+        //indexOf()方法
+        document.write(str.indexOf("hn"));
+        document.write("<hr>");
+        document.write(str.indexOf("a")); //字符不存在，返回-1
+        document.write("<hr>");
+        //split()方法
+        var str23 = "What are you donging now?";
+        document.write(str23.split(" "));
+        document.write("<hr>");
+        //replace()方法
+        var str24 = "John Soong";
+        document.write(str24.replace(/John/, "Jayden"));
+        document.write("<hr>");
+        //substr() 和 substring() 
+        var str25 = "abcdefghijklmn";
+        document.write(str25.substr(6, 3)); //从第6个开始，截取长度为3的一个子字符串
+        document.write("<hr>");
+        document.write(str25.substring(3, 6)); //从第3个字符开始截取，到第6个字符。[3, 6)
+    </script>
+</body>
+</html>
