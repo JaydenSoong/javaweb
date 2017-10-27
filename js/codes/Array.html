@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Array学习</title>
+</head>
+
+<body>
+    <script type="text/javascript" charset="utf-8">
+        //length 属性
+        var arr = new Array(1, 2, 3);
+        document.write(arr.length);
+        document.write("<hr>");
+
+        //concat() 方法
+        var arr1 = [4, 5, 6];
+        var arr2 = [7, 8, 9];
+        document.write(arr1.concat(arr2));
+        document.write("<hr>");
+
+        //join() 方法
+        var arr3 = ["Jim", "Green"];
+        document.write(arr3);
+        document.write("<br>");
+        document.write(arr3.join("."));
+        document.write("<hr>");
+
+        //push() 方法
+        var arr4 = ["Chinese", "English"];
+        document.write("原数组长度：" + arr4.length + "<br>");
+        document.write("新数组长度：" + arr4.push("Japanese") + "<hr>");
+
+        var arr41 = [1, 2, 3];
+        var arr42 = [4, 5, 6];
+        arr41.push(arr42);
+        for (var i = 0; i < arr41.length; i++) 
+            alert(arr41[i]);
+        
+        //pop() 方法
+        var arr5 = ["Java", "Python", "C#", "Javascript"];
+        document.write(arr5.pop() + "<hr>"); //Javascript
+
+        //reverse() 颠倒数组顺序
+        var arr6 = ["a", "b", "c", "d"];
+        document.write(arr6.reverse()); //d,c,b,a 
+        
+    </script>
+</body>
+
+</html>
