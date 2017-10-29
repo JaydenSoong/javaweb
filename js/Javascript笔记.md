@@ -132,9 +132,15 @@ document.write(parseInt(str2) + 1); //1235
 ```
 ## 4、JS的Bom对象
 ### Bom: Browser object model, 浏览器对象模型。
-### 有那些对象？
+#### 有那些对象？
 - navigator: 获取客户机信息。
 1. navigator.appName:返回浏览器的名称
 ```    
 document.write(navigator.appName);
+```
+- screen: 获取屏幕信息
+```
+document.write(screen.width);
+document.write("<br>");
+document.write(screen.height);
 ```
