@@ -7,6 +7,8 @@
     <title>Bom 对象</title>
 </head>
 <body>
+    <input type="button" value="页面跳转" onclick="changelocation()">
+    <hr>
     <script type="text/javascript">
         //navigator 对象
         document.write(navigator.appName);
@@ -17,6 +19,14 @@
         document.write("<br>");
         document.write(screen.height);
         document.write("<hr>");
+
+        //location 对象
+        document.write(location.href);
+        document.write("<hr>");
+        
+        function changelocation(){
+            location.href = "String.html";
+        }
     </script> 
 </body>
 </html>

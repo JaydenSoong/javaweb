@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="前进" onclick="forward1()">
+    <input type="button" value="后退" onclick="back1()">
+    <h1>这是页面B</h1>
+    <a href="c.html">页面C</a>
+    <script>
+        function back1(){
+            history.back();
+            //history.go(-1);
+        }
+    </script>
+    <script>
+        function forward1(){
+            history.forward();
+            //history.go(1);
+        }
+    </script>
+</body>
+</html>

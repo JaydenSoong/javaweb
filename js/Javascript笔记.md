@@ -144,3 +144,31 @@ document.write(screen.width);
 document.write("<br>");
 document.write(screen.height);
 ```
+- location: 对象包含有关当前 URL 的信息。Location 对象是 Window 对象的一个部分，可通过 window.location 属性来访问。
+```
+//获取url地址
+document.write(location.href);
+document.write("<hr>");
+//设置url地址        
+function changelocation(){
+    location.href = "String.html";
+}
+```
+- History: 对象包含用户（在浏览器窗口中）访问过的 URL。History 对象是 window 对象的一部分，可通过 window.history 属性对其进行访问。
+1. 创建三个页面
+   
+   a.html 超链接到 b.html，b.html 超链接到 c.html
+2. 访问上一个页面
+```
+//第一种方式
+history.back();
+//第二种方式
+history.go(-1);
+```
+3. 访问下一个页面
+```
+//第一种方式
+history.forward();
+//第二种方式
+history.go(1);
+```
