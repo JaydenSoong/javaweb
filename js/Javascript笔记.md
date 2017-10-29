@@ -1,6 +1,8 @@
 ## 1、String对象
 ### 创建String对象
-`var str = "abc";`
+```
+var str = "abc";
+```
 ### 属性和方法
 #### 属性 length: 字符串的长度
 #### 方法
