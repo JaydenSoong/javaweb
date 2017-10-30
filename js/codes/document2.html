@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="input1" value="AAAAA">
+    <input type="text" name="input1" value="BBBBB">
+    <input type="text" name="input1" value="CCCCC">
+    <input type="text" name="input1" value="DDDDD">
+    <input type="text" name="input1" value="EEEEE">
+    <script>
+        // 通过 getElementsByName() 得到相同名称的对象集合
+        var x = document.getElementsByName("input1");
+        // 验证得到的数据类型 [object NodeList]
+        alert(x);
+        alert(x.length);
+        // 遍历集合
+        for(var i=0; i<x.length; i++)
+            alert(x[i].value);
+    </script>
+</body>
+</html>
