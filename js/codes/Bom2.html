@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="disp_confirm()" value="Display a confirm box">
+    <input type="button" onclick="disp_prompt()" value="Display a prompt box">
+    <input type="button" onclick="open_win()" value="Open a new window">
+    <input type="button" onclick="setIntervar1()" value="setInterval">
+    <input type="button" onclick="setTimeout1()" value="setTimeout">
+    <script>
+        // confirm() 方法
+        function disp_confirm(){
+            var r = window.confirm("Press a button");
+            if(r) 
+                document.write("You Pressed Ok");
+            else
+                document.write("You Pressed Cancel");
+        }
+
+        // prompt() 方法
+        function disp_prompt(){
+            var name = window.prompt("Plese input your name", "Jayden");
+            if(name != null && name != "")
+                document.write("Hello " + name + "!");
+        }
+
+        //open() 方法
+        function open_win(){
+            window.open("http://www.tangwai.com", "棠外", "width=500, height=400");
+        }
+
+        //setInterval() 方法
+        function setIntervar1(){
+            var id1 = window.setInterval("alert('1234')", 2000);
+        }
+
+        //setTimeout() 方法
+        function setTimeout1(){
+            var id2 = window.setTimeout("alert('abce')", 4000);
+        }
+
+    </script>
+</body>
+</html>
