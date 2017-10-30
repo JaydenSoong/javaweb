@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label for="id1">用户编号：</label>
+    <input type="text" id="id1">
+    <br>
+    <label for="id2">用户姓名：</label>
+    <input type="text" id="id2">
+    <br>
+    <input type="button" value="选择用户" onclick="choose_user()">
+    <script>
+        function choose_user(){
+            window.open("user.html", "", "width=400,height=200");
+        }
+    </script>
+</body>
+</html>
