@@ -11,23 +11,32 @@
         <tr>
             <td name="userid">001</td>
             <td name="username">Jayden</td>
-            <td width="80"><input type="button" value="选择" onclick="choose_this()"></td>
+            <td width="80"><input type="button" value="选择" onclick="choose_this(0)"></td>
         </tr>
         <tr>
             <td name="userid">002</td>
             <td name="username">Jhon</td>
-            <td width="80"><input type="button" value="选择"></td>
+            <td width="80"><input type="button" value="选择" onclick="choose_this(1)"></td>
         </tr>
         <tr>
             <td name="userid">003</td>
             <td name="username">Tom</td>
-            <td width="80"><input type="button" value="选择"></td>
+            <td width="80"><input type="button" value="选择" onclick="choose_this(2)"></td>
         </tr>
     </table>
 
     <script>
-        function choose_this(){
-            var mywindow = location.href
+        function choose_this(i){
+            //得到相应表格的内容
+            var id_txt = document.getElementsByName("userid")[i].textContent;
+            var name_txt = document.getElementsByName("username")[i].textContent;
+            //通过window对象的opener属性，得到window页面。
+            var mywindow = window.opener;
+            //为window页面相应的文本框赋值。
+            mywindow.document.getElementById("id1").value = id_txt;
+            mywindow.document.getElementById("id2").value = name_txt;
+            //关闭窗口
+            window.close();
         }
     </script>
 </body>
