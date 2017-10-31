@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span id="spanid">Jayden</span>
+    <script>
+        //标签节点
+        var span1 = document.getElementById("spanid");
+        //alert(span1.nodeType);  //1
+        //alert(span1.nodeName);  //SPAN
+        //alert(span1.nodeValue); //null
+
+        //属性节点
+        var id1 = span1.getAttributeNode("id");
+        //alert(id1.nodeType);  //2
+        //alert(id1.nodeName);  //id
+        //alert(id1.nodeValue); //spanid
+
+        //文本节点
+        var text1 = span1.firstChild;
+        alert(text1.nodeType);  //3
+        alert(text1.nodeName);  //#text
+        alert(text1.nodeValue); //Jayden
+    </script>
+</body>
+</html>
