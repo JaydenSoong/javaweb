@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作Dom树</title>
+</head>
+<body>
+    <ul>
+        <li>毛泽东</li>
+        <li>邓小平</li>
+        <li>江泽民</li>
+        <li>胡锦涛</li>
+        <li>习近平</li>
+    </ul>
+    <input type="button" value="删除" onclick="remove_child()">
+    <script>
+        // 删除节点
+        function remove_child() {
+            var ul1 = document.getElementsByTagName("ul")[0];
+            // 返回 li 标签集合
+            var li_col = document.getElementsByTagName("li");
+            // 删除最后一个 li 标签
+            if(li_col.length > 0)
+                ul1.removeChild(li_col[li_col.length - 1]);
+        }
+    </script>
+</body>
+</html>

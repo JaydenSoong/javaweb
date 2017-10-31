@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作Dom树</title>
+</head>
+<body>
+    <ul>
+        <li>毛泽东</li>
+        <li>周恩来</li>
+        <li>江泽民</li>
+        <li>胡锦涛</li>
+        <li>习近平</li>
+    </ul>
+    <input type="button" value="替换" onclick="replace_child()">
+    <script>
+        // 替换节点
+        function replace_child() {
+            // 创建节点
+            var lix = document.createElement("li")
+            lix.appendChild(document.createTextNode("邓小平"));
+            // 父节点
+            var ul1 = document.getElementsByTagName("ul")[0];
+            // 被替换的节点
+            var liy = document.getElementsByTagName("li")[1];
+            // 替换操作
+            ul1.replaceChild(lix, liy);
+        }
+    </script>
+</body>
+</html>

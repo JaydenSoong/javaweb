@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作Dom树</title>
+</head>
+<style>
+    #div1{width: 100px; height: 100px; margin: 5px; border: 1px solid black}
+    #div2{width: 100px; height: 100px; margin: 5px; border: 1px solid blueviolet}
+</style>
+<body>
+    <div id="div1">
+        <ul id="ulid">
+            <li>Jayden</li>
+            <li>Tom</li>
+            <li>Mary</li>
+        </ul>
+    </div>
+    <div id="div2"></div>
+    <input type="button" value="添加" onclick="append_child()">
+    <script>
+        function append_child() {
+            var div2 = document.getElementById("div2");
+            div2.appendChild(document.getElementById("ulid"));
+        }
+    </script>
+</body>
+</html>

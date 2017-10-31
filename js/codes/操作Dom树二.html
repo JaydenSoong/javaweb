@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作Dom树</title>
+</head>
+<body>
+    <ul>
+        <li>毛泽东</li>
+        <li>邓小平</li>
+        <li>江泽民</li>
+        <li>胡锦涛</li>
+        <li>习近平</li>
+    </ul>
+    <input type="button" value="添加" onclick="insert_before()">
+    <script>
+        function insert_before() {
+            var ul1 = document.getElementsByTagName("ul")[0];
+            var lix = document.createElement("li");
+            var textx = document.createTextNode("华国锋"); 
+            lix.appendChild(textx);
+            var liy = document.getElementsByTagName("li")[1];
+            ul1.insertBefore(lix, liy);
+        }
+    </script>
+</body>
+</html>
