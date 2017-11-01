@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>全选案例</title>
+</head>
+<body>
+    <input type="checkbox" id="sel" onclick="sel_yes_no()"> 全选/全不选
+    <br>
+    <input type="checkbox" name="love"> 语文
+    <br>
+    <input type="checkbox" name="love"> 数学
+    <br>
+    <input type="checkbox" name="love"> 英语
+    <br>
+    <input type="checkbox" name="love"> 物理
+    <br>
+    <input type="button" value="全选" onclick="select_all()">
+    <input type="button" value="全不选" onclick="select_no()">
+    <input type="button" value="反选" onclick="select_ot()">
+</body>
+<script>
+    check_col = document.getElementsByName("love");
+
+    //通过按钮全选
+    function select_all(){
+        for(var i=0; i<check_col.length; i++)
+            check_col[i].checked = true;
+    }
+
+    //通过按钮全不选
+    function select_no(){
+        for(var i=0; i<check_col.length; i++)
+            check_col[i].checked = false;
+    }
+
+    //通过按钮反选
+    function select_ot(){
+        for(var i=0; i<check_col.length; i++)
+            check_col[i].checked = !check_col[i].checked;
+
+    }
+
+    //通过复选框选择
+    function sel_yes_no() {
+        var selch = document.getElementById("sel");
+        if(selch.checked){
+            select_all();
+        }
+        else{
+            select_no();
+        }
+    }
+</script>
+</html>
