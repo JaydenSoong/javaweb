@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>innerHTML属性</title>
+    <style>
+        #divid{width: 200px; height: 200px; border: 1px solid blueviolet}
+    </style>
+</head>
+<body>
+    <span id="spanid">棠外</span>
+    <div id="divid"></div>
+    <script>
+        //通过innerHTML获取内容
+        alert(document.getElementById("spanid").innerHTML);
+
+        //向标签里设置内容
+        var tab = "<table border=1>" + "<tr><td>001</td><td>疯狂Java讲义</td></tr>" 
+        + "<tr><td>001</td><td>疯狂Java讲义</td></tr>"
+        + "<tr><td>001</td><td>疯狂Java讲义</td></tr></table>"
+        document.getElementById("divid").innerHTML = tab;
+    </script>
+</body>
+</html>
