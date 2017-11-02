@@ -1,7 +1,7 @@
 ## xml 简介
 1. eXtensible Markup Language: 可扩展标记语言
     - 标记型语言：html是标记型语言，xml也是标记型语言，也是使用标签来操作。
-    - 可扩展：html里面的标签是固定的，每个标签都有它的含义。xml里的标签是可以自己定义的，如 <person></person>、<狗><狗/>
+    - 可扩展：html里面的标签是固定的，每个标签都有它的含义。xml里的标签是可以自己定义的，如          <person></person>、<狗><狗/>
 2. xml 的用途
     - html 用于显示数据，xml 也可显示数据
     - xml 的主要作用是存储数据 
