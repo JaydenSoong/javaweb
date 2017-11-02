@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单的提交方式</title>
+</head>
+<body>
+    <form id="form1" action="hello.html">
+        <input type="text" name="username" onfocus="onfocus_action();" onblur="onblur_action();">
+        <input type="button" value="提交" onclick="submit1();">
+    </form>
+    <hr>
+    <a href="hello.html?username=Jayden">超链接的方式提交</a>
+    <script>
+        //获取标签元素
+        var inputx = document.getElementsByName("username")[0];
+        // 得到焦点演示
+        function onfocus_action(){
+            //清除内容
+            inputx.value = "";
+        } 
+
+        // 失去焦点演示
+        function onblur_action() {
+            inputx.value = "Please input your name";
+        }
+
+        function submit1() {
+            // 1. 先获取到表单
+            var form1 = document.getElementById("form1");
+
+            //form1.action = "hello.html";
+            // 2. 提交表单
+            form1.submit();
+        }
+
+        
+    </script>
+</body>
+</html>
