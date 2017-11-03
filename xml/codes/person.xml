@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE person SYSTEM "person.dtd">
+<person>
+    <name>张三</name>
+    <age>20</age>
+    <!--<a>2222</a>-->
+</person>
