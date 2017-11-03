@@ -18,5 +18,23 @@ xml 的约束技术：dtd 约束 和 schema 约束。
         ```
 4. 在 xml 文件中引入 dtd 文件
     ```
-    <!DOCTYPT 根元素 SYSTEM "dtd文件路径">
+    <!DOCTYPE 根元素 SYSTEM "dtd文件路径">
+    ```
+### dtd 的三种引入方式
+1. 引入外部的 dtd 文件
+    ```
+    <!DOCTYPE 根元素名称 SYSTEM "dtd文件路径">
+    ```
+2. 使用内部的 dtd 文件
+    ```
+    <!DOCTYPE 根元素名称 [
+        <!ELEMENT 元素名称 (子元素1, 子元素2, ...)>
+        <!ELEMENT 元素名称 (#PCDATA)>
+        <!ELEMENT 元素名称 (#PCDATA)>
+        ...
+    ]>
+    ```
+3. 使用外部的 dtd 文件（网络上的 dtd 文件）
+    ```
+    <!DOCTYPE 根元素名称 PUBLIC "dtd 名称" "dtd路径">
     ```
