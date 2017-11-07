@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE person [
+        <!ELEMENT person (id+ | name? |age*| sex)>
+        <!ELEMENT id (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT age ANY>
+        <!ELEMENT sex EMPTY>]>
+<person>
+    <!--<id>0001</id>-->
+    <!--<id>0001</id>-->
+    <!--<name>John</name>-->
+    <!--<age>23</age>-->
+    <sex></sex>
+</person>
