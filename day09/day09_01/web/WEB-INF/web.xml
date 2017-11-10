@@ -6,6 +6,15 @@
     <servlet>
         <servlet-name>AServlet</servlet-name>
         <servlet-class>com.jayden.servlet.AServlet</servlet-class>
+        <!-- 初始化参数 -->
+        <init-param>
+            <param-name>n1</param-name>
+            <param-value>v1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>n2</param-name>
+            <param-value>v2</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>AServlet</servlet-name>
