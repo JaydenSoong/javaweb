@@ -9,6 +9,11 @@ import java.io.IOException;
 
 @WebServlet(name = "FServlet")
 public class FServlet extends HttpServlet {
+    @Override
+    public void init() throws ServletException {
+        System.out.println("Hello---->World!");
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("doPost()...");
     }

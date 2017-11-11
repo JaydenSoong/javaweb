@@ -31,6 +31,7 @@
     <servlet>
         <servlet-name>FServlet</servlet-name>
         <servlet-class>com.jayden.servlet.FServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>FServlet</servlet-name>
