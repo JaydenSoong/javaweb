@@ -20,4 +20,20 @@
         <servlet-name>AServlet</servlet-name>
         <url-pattern>/AServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EServlet</servlet-name>
+        <servlet-class>com.jayden.servlet.EServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EServlet</servlet-name>
+        <url-pattern>/EServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>FServlet</servlet-name>
+        <servlet-class>com.jayden.servlet.FServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FServlet</servlet-name>
+        <url-pattern>/FServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
