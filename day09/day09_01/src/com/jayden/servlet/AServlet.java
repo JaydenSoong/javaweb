@@ -1,6 +1,7 @@
 package com.jayden.servlet;
 import javax.servlet.*;
 import java.io.IOException;
+import java.util.Enumeration;
 
 public class AServlet implements Servlet {
     /**
@@ -9,6 +10,18 @@ public class AServlet implements Servlet {
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         System.out.println("init()...");
+
+        // 获取Servlet的名称
+        System.out.println(servletConfig.getServletName());
+        // 获取初始化参数的值
+        System.out.println(servletConfig.getInitParameter("n1"));
+        System.out.println(servletConfig.getInitParameter("n2"));
+
+        // 获取初始化参数的名称
+        Enumeration e = servletConfig.getInitParameterNames();
+        while (e.hasMoreElements()){
+            System.out.println(e.nextElement());
+        }
     }
 
     /**
