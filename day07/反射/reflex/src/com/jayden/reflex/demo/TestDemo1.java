@@ -54,12 +54,19 @@ public class TestDemo1 {
     public void test3() {
         try {
             Class c3 = Class.forName("com.jayden.reflex.demo.User");
-            Constructor cs = c3.getConstructor();
-            User user = (User) cs.newInstance();
+
             // 通过名称得到属性。这里有两个方法。getDeclaredField() 和 getField() 前者可以得到所有属性。后者只能得到 public 修饰的属性。
             Field field1 = c3.getDeclaredField("name");
 //            Field field1 = c3.getField("name");
+
+            // 创建实例（Field 设置值的时候需要）
+            Constructor cs = c3.getConstructor();
+            User user = (User) cs.newInstance();
+
+            // 将私有属性设置成可访问的。
             field1.setAccessible(true);
+
+            // 设置获取到的属性
             field1.set(user, "Jayden");
             System.out.println(field1.get(user));
         } catch (Exception e) {
