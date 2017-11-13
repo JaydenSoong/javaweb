@@ -3,6 +3,7 @@ package com.jayden.reflex.demo;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 public class TestDemo1 {
@@ -44,5 +45,25 @@ public class TestDemo1 {
         // 验证
         User user = (User) cs.newInstance("jayden", 10001);
         System.out.println(user.getName() + "----" + user.getId());
+    }
+
+    /**
+     * 操作属性
+     */
+    @Test
+    public void test3() {
+        try {
+            Class c3 = Class.forName("com.jayden.reflex.demo.User");
+            Constructor cs = c3.getConstructor();
+            User user = (User) cs.newInstance();
+            // 通过名称得到属性。这里有两个方法。getDeclaredField() 和 getField() 前者可以得到所有属性。后者只能得到 public 修饰的属性。
+            Field field1 = c3.getDeclaredField("name");
+//            Field field1 = c3.getField("name");
+            field1.setAccessible(true);
+            field1.set(user, "Jayden");
+            System.out.println(field1.get(user));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
