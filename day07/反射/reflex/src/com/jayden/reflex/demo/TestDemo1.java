@@ -5,6 +5,7 @@ import org.junit.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public class TestDemo1 {
     public static void main(String[] args) throws ClassNotFoundException {
@@ -69,6 +70,30 @@ public class TestDemo1 {
             // 设置获取到的属性
             field1.set(user, "Jayden");
             System.out.println(field1.get(user));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 通过反射操作普通方法。
+     */
+    @Test
+    public void test4() {
+        try {
+            Class c4 = Class.forName("com.jayden.reflex.demo.User");
+
+            // 得到普通方法的一个对象。传递两个参数，第一个参数是普通方法的方法名。第二个参数是普通方法的参数数组。
+            //Method method = c4.getDeclaredMethod("getId");
+            Method method = c4.getDeclaredMethod("setId", int.class);
+
+            Constructor cs = c4.getConstructor(String.class, int.class);
+            User user = (User) cs.newInstance("Jayden", 1002);
+
+            // 通过 invoke() 让setId() 方法执行。传递两个参数。第一个参数是 setId() 的调用者。第二个是 setId() 传入的值。
+            // 如果普通方法也静态的。则这里的调用者填 null
+            method.invoke(user, 1000);
+            System.out.println(user.getId());
         } catch (Exception e) {
             e.printStackTrace();
         }
