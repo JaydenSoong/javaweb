@@ -11,4 +11,9 @@
         <servlet-name>AServlet</servlet-name>
         <url-pattern>/AServlet</url-pattern>
     </servlet-mapping>
+    <!--获取公共初始化参数测试-->
+    <context-param>
+        <param-name>context_name</param-name>
+        <param-value>context_value</param-value>
+    </context-param>
 </web-app>
