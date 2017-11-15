@@ -23,6 +23,9 @@ public class FAServlet extends javax.servlet.http.HttpServlet {
         // 设置响应体（最终不会被保留）
         response.getWriter().print("hello");
 
+        // 通过 request 对象传值
+        request.setAttribute("username", "JaydenSoong");
+
         // 请求转发过程。先得到请求转发对象，再转发
         RequestDispatcher rd = request.getRequestDispatcher("/FBServlet");
         rd.forward(request, response);
