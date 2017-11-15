@@ -4,7 +4,8 @@ import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 
 /**
- * 演示请求转发。请求转发的特点是“留头不留体”，在最终的响应页面不会保留它的响应体
+ * 演示请求转发。请求转发相当于请求 Servlet 完成不了一个任务，而把任务转发给被请求 Servlet。
+ * 请求转发的特点是“留头不留体”，在最终的响应页面不会保留它的响应体
  * 请求转发和请求包含都是一个请求。
  * @Author Jayden
  * @Date 2017/11/15 22:14
