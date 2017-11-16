@@ -14,8 +14,10 @@
     <h2>获取 Cookie</h2>
     <%
         Cookie[] cookies = request.getCookies();
-        for (Cookie c : cookies) {
-            out.print(c.getName() + " = " + c.getValue() + "<br>");
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                out.print(c.getName() + " = " + c.getValue() + "<br>");
+            }
         }
     %>
 </body>
