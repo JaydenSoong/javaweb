@@ -9,3 +9,19 @@
 2. commons-beanutils 依赖内省。使用时要先导包
     * commons-beanutils.jar
     * commons-logging.jar
+## JSP 中与 javaBean 相关的标签(基本没有用，相关动作都在 Servlet 中完成)
+1. \<jsp:useBean> 创建或查找 bean
+    ```
+    // 在 session 中查找名为 user1 的 bean。若没有，则创建。
+    <jsp:useBean id="user1" class="com.jayden.domain.Person" scope="session">
+    ```
+2. \<jsp:setProperty> 修改属性
+    ```
+    // 将名为 user1 的 bean 的 username 属性设置为 admin
+    <jsp:serProperty property="username" name="user1" value="admin">
+    ```
+3. \<jsp:getProperty> 获取属性
+    ```
+    // 获取名为 user1 的 bean 的 username 属性
+    <jsp:serProperty property="username" name="user1" >
+    ```
