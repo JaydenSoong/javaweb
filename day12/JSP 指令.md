@@ -44,4 +44,18 @@
     isThreadSafe: 当前 JSP 是否支持并发访问
     session: 当前页面是否支持 session。如果为 false，那么当前页面就没有 session 这个内置对象。
     extends: 让 JSP 生成的 Servlet 去继承该属性指定的类。
+## 2. include 指令（静态包含）
+* 与 RequestDispatcher 的 include() 方法功能非常相似。
+* <%@ include %> 它是在 JSP 编译成 .java 文件时完成的。它们共同生成一个 .java 文件。然后再生成一个 .class
+* RequestDispather 的 include() 是一个方法。包含和被包含的是两个 Servlet。即两个 .class 文件。他们只是响应的内容在运行时合并了。
+* 作用，把页面分解了。使用包含的方式组合在一起。这样，一个页面中不变的部分就是一个 JSP, 我们只需要处理变化的部分。
+## 3. tablib 标签（导入标签库）
+* 两个属性:
+    1. prefix: 指定标签库在本页面中的前缀。由我们自己来起名字
+    2. uri: 指定标签库的位置。
+* 如：
+    ```
+    // 前缀名，我们起为 pre。位置是 /struts_tags。假如这个库里有一个标签 text。在页面中就应该是<pre:text>
+    <%@tablib prefix="pre" uri="/struts_tags"%>
+    ```
 
