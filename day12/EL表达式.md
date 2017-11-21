@@ -15,3 +15,14 @@
     * paramValues: 对应参数，它是一个 Map，其中 key 是参数名，value 是多个参数值。适合于多值。
     * header: 对应请求头，它是一个 Map，其中，key 是头名称，value 是单个的头值。适合于单值。
     * headerValues: 对应请求头，它是一个 Map，其中，key 是头名称，value 是多个的头值。适合于多值。
+    * initParam: 获取 \<context-param> 内的参数
+        ```
+        <context-param>
+            <param-name>xxx</param-name>
+            <param-value>XXX</param-value>
+        </context-param>
+        <context-param>
+            <param-name>yyy</param-name>
+            <param-value>YYY</param-value>
+        </context-param>
+        ```
