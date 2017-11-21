@@ -7,3 +7,9 @@
     * ${pageScope.xxx}、${request.xxx}、${session.xxx}、${application.xxx} 在指定域中查找名为 "xxx" 的属性
 3. JavaBean 民航
 4. EL 可以输出的东西都在 11 个内置对象中。
+    * pageScope
+    * requestScope
+    * sessionScope
+    * applicationScope
+    * param: 对应参数，它是一个 Map，其中 key 是参数名，value 是参数值。适合于单值。
+    * paramValues: 对应参数，它是一个 Map，其中 key 是参数名，value 是多个参数值。适合于多值。
