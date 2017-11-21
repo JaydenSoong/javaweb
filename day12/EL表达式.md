@@ -26,3 +26,4 @@
             <param-value>YYY</param-value>
         </context-param>
         ```
+    * cookie: Map<String, Cookie> 类型，其中 key 是 cookie 的 name, vaule 是 cookie 对象。取得具体值还要加上 .value。如 ${cookie.username.value}
