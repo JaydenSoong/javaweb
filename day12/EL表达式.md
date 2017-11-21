@@ -6,7 +6,7 @@
     * ${xxx} 全域查找名为 "xxx" 的属性。如果不存在，则输出空字符串，而不是 null
     * ${pageScope.xxx}、${request.xxx}、${session.xxx}、${application.xxx} 在指定域中查找名为 "xxx" 的属性
 3. JavaBean 民航
-4. EL 可以输出的东西都在 11 个内置对象中。
+4. EL 可以输出的东西都在 11 个内置对象中。其中 10 个是 Map，pageContext 不是 Map，它就是 PageContext 类型
     * pageScope
     * requestScope
     * sessionScope
@@ -27,3 +27,12 @@
         </context-param>
         ```
     * cookie: Map<String, Cookie> 类型，其中 key 是 cookie 的 name, vaule 是 cookie 对象。取得具体值还要加上 .value。如 ${cookie.username.value}
+    * pageContext: 它就是 pageContext 类型。
+        ```
+        // 获取协议
+        ${pageContext.request.scheme}<br>
+        // 获取请求方式
+        ${pageContext.request.method}<br>
+        // 获取项目地址 
+        ${pageContext.request.contextPath}
+        ```
