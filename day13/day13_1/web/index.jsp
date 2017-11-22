@@ -23,6 +23,14 @@
     ${code}
     <%-- 使用标签进行输出，有一个 escapeXml 属性，其默认值是 false。作用是将“<、>”等转义。
     所以使用下面的标签输出时将不会弹出对话框，而是输出字符串 --%>
-    <c:out value="${code}" escapeXml="" />
+    <c:out value="${code}" />
+    <hr>
+  <%
+    String[] arr = {"one", "two", "three", "four"};
+    pageContext.setAttribute("arr", arr);
+  %>
+  <c:forEach items="${pageScope.arr}" var="str" varStatus="vs">
+      ${vs.count} ${vs.index} ${vs.first} ${vs.last} ${vs.current}<br>
+  </c:forEach>
   </body>
 </html>
