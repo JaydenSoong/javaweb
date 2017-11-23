@@ -44,9 +44,13 @@ class TestJaxp {
      */
     @Test
     void findFirstByTagName() throws ParserConfigurationException, IOException, SAXException {
+        // 创建解析器工厂
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        // 创建解析器
         DocumentBuilder builder = factory.newDocumentBuilder();
+        // 解析 xml 文件
         Document document = builder.parse("xml/user.xml");
+        // 得到第一个指定名称的标签
         Node node = document.getElementsByTagName("name").item(0);
         System.out.println(node.getTextContent());
 
