@@ -25,6 +25,7 @@
     所以使用下面的标签输出时将不会弹出对话框，而是输出字符串 --%>
     <c:out value="${code}" />
     <hr>
+<<<<<<< HEAD
 
     <%-- EL 表达式获取地址 --%>
     ${pageContext.request.contextPath}/index.jsp
@@ -51,6 +52,14 @@
     %>
   <c:forEach items="${Arr}" var="i" >
       ${i}
+=======
+  <%
+    String[] arr = {"one", "two", "three", "four"};
+    pageContext.setAttribute("arr", arr);
+  %>
+  <c:forEach items="${pageScope.arr}" var="str" varStatus="vs">
+      ${vs.count} ${vs.index} ${vs.first} ${vs.last} ${vs.current}<br>
+>>>>>>> 30ec6ef0b0e8ddcd72366d4e1967aea37dc55368
   </c:forEach>
   </body>
 </html>
