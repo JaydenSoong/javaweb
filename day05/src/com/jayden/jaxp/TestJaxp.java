@@ -12,6 +12,12 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 class TestJaxp {
+    /**
+     * 查出所有指定名称的标签
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     */
     @Test
     void findByTagName() throws ParserConfigurationException, IOException, SAXException {
         // 创建解析器工厂
@@ -28,5 +34,21 @@ class TestJaxp {
             Node node = nodeList.item(i);
             System.out.println(node.getTextContent());
         }
+    }
+
+    /**
+     * 查出第一个指定名称的标签
+     * @throws ParserConfigurationException
+     * @throws IOException
+     * @throws SAXException
+     */
+    @Test
+    void findFirstByTagName() throws ParserConfigurationException, IOException, SAXException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document document = builder.parse("xml/user.xml");
+        Node node = document.getElementsByTagName("name").item(0);
+        System.out.println(node.getTextContent());
+
     }
 }
