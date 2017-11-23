@@ -23,6 +23,34 @@
     ${code}
     <%-- 使用标签进行输出，有一个 escapeXml 属性，其默认值是 false。作用是将“<、>”等转义。
     所以使用下面的标签输出时将不会弹出对话框，而是输出字符串 --%>
-    <c:out value="${code}" escapeXml="" />
+    <c:out value="${code}" />
+    <hr>
+
+    <%-- EL 表达式获取地址 --%>
+    ${pageContext.request.contextPath}/index.jsp
+    <br>
+   <%-- url 标签，比上面的 EL 方式更方便 --%>
+    <c:url value="/index.jsp" />
+    <br>
+    <c:url value="/index.jsp"><c:param name="username" value="张三" /></c:url>
+    <br>
+  <%-- url 标签在超链接中的应用 --%>
+    <a href="<c:url value="/index.jsp"><c:param name="username" value="张三" /></c:url>">首页</a>
+    <c:if test="${empty param.username}">
+     您还没有输入 useranme
+    </c:if>
+    <c:choose>
+        <c:when test="${empty param.username}">您还没有输入 useranme</c:when>
+        <c:when test="${not empty param.username}">${param.username}</c:when>
+    </c:choose>
+  <hr>
+  <%--<c:set var="Arr" value="{1, 2, 3, 4, 5}" scope="request" />--%>
+    <%
+        int[] Arr = {1, 2, 3, 4, 5, 6, 7};
+        request.setAttribute("Arr", Arr);
+    %>
+  <c:forEach items="${Arr}" var="i" >
+      ${i}
+  </c:forEach>
   </body>
 </html>
