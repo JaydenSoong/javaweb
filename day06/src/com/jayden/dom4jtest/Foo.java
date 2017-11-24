@@ -51,4 +51,23 @@ class Foo {
         // 输出 name 的值
         System.out.println(firstName.getText());
     }
+
+    /**
+     * 得到第二个 name 的值
+     */
+    @Test
+    void getSecondNodeText() throws DocumentException {
+        // 得到 Document
+        Document document = getDocument();
+        // 得到根元素
+        Element root = document.getRootElement();
+        // 得到根元素的所有第一层名为 user 的子元素
+        List<Element> list = root.elements("user");
+        // 得到第二个 user
+        Element secondUser = list.get(1);
+        // 得到第二个 name
+        Element secondName = secondUser.element("name");
+        // 输出 name 的值
+        System.out.println(secondName.getText());
+    }
 }
