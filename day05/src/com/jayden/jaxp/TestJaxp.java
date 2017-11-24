@@ -118,4 +118,44 @@ class TestJaxp {
        // 完成回写
        transform(document);
     }
+
+    /**
+     * 删除节点
+     */
+    @Test
+    void removeNode() throws IOException, SAXException, ParserConfigurationException, TransformerException {
+        // 得到 Document
+        Document document = getDocument();
+        // 得到父节点
+        Node node = document.getElementsByTagName("user").item(0);
+        // 得到将要删除的节点
+        Node nodex = document.getElementsByTagName("sex").item(0);
+        // 从父节点中删除
+        node.removeChild(nodex);
+        // 回写
+        transform(document);
+    }
+
+    @Test
+    void listNode() throws IOException, SAXException, ParserConfigurationException {
+        // 得到 Document
+        Document document = getDocument();
+        // 遍历
+        list(document);
+    }
+
+    private void list(Node node) {
+        // 输出元素节点的名称
+        if (node.getNodeType() == Node.ELEMENT_NODE) {
+            System.out.println(node.getNodeName());
+        }
+        // 得到所有节点的子节点
+        NodeList nodeList = node.getChildNodes();
+        // 遍历方法
+        for (int i =0, length = nodeList.getLength(); i < length; i ++) {
+            Node nodex = nodeList.item(i);
+            // 递归调用
+            list(nodex);
+        }
+    }
 }
