@@ -113,4 +113,21 @@ class Foo {
         // 回写
         Dom4jUtils.xmlWriters("xml/user.xml", document);
     }
+
+    // 删除第一个 email 标签
+    @Test
+    void removeEmail(){
+        // 得到 Document
+        Document document = Dom4jUtils.getDocument("xml/user.xml");
+        // 获取根节点
+        Element root = document.getRootElement();
+        // 获取第一个 user
+        Element user1 = root.element("user");
+        // 得到 email
+        Element email = user1.element("email");
+        // 删除
+        user1.remove(email);
+        // 回写
+        Dom4jUtils.xmlWriters("xml/user.xml", document);
+    }
 }

@@ -4,7 +4,6 @@
   <user> 
     <name>张三</name>  
     <password>123456</password>  
-    <email>foo@126.com</email>  
     <sex>female</sex> 
   </user>  
   <user> 
