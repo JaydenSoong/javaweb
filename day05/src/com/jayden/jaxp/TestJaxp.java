@@ -80,14 +80,42 @@ class TestJaxp {
         Node node = document.getElementsByTagName("user").item(0);
         // 将创建的标签添加到第一个 user 最后
         node.appendChild(element);
+        // 将内存中的内容回写到文件中
+        transform(document);
 
-        /* 将内存中的内容回写到文件中 */
+
+    }
+
+    /**
+     * 将内存中的内容回写到文件中
+     * @param document
+     * @throws TransformerException
+     */
+    private void transform(Document document) throws TransformerException {
         // 得到 TransformerFactory
         TransformerFactory factory = TransformerFactory.newInstance();
         // 得到 Transformer
         Transformer transformer = factory.newTransformer();
         // 回写
         transformer.transform(new DOMSource(document), new StreamResult("xml/user.xml"));
+    }
 
+    /**
+     * 修改节点文本
+     * @throws IOException
+     * @throws SAXException
+     * @throws ParserConfigurationException
+     * @throws TransformerException
+     */
+    @Test
+    void modifyElement() throws IOException, SAXException, ParserConfigurationException, TransformerException {
+       // 得到 Document
+       Document document = getDocument();
+       // 得到需要修改的节点
+       Node node = document.getElementsByTagName("sex").item(0);
+       // 修改节点
+       node.setTextContent("female");
+       // 完成回写
+       transform(document);
     }
 }
