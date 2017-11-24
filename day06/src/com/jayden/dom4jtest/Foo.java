@@ -3,9 +3,13 @@ package com.jayden.dom4jtest;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 class Foo {
@@ -69,5 +73,28 @@ class Foo {
         Element secondName = secondUser.element("name");
         // 输出 name 的值
         System.out.println(secondName.getText());
+    }
+
+    /**
+     * 在标签末尾添加节点
+     */
+    @Test
+    void addSex() throws DocumentException, IOException {
+        // 得到 Document
+        Document document = getDocument();
+        // 得到根元素
+        Element root = document.getRootElement();
+        // 得到第一个 user
+        Element user1 = root.element("user");
+        // 在末尾添加节点
+        Element sex = user1.addElement("sex");
+        // 往节点中添加文本节点
+        sex.addText("male");
+
+        // 回写，第一个参数：要回写到哪里，第二个参数：带格式（给缩进）
+        XMLWriter writer = new XMLWriter(new FileOutputStream("xml/user.xml"), OutputFormat.createPrettyPrint());
+        writer.write(document);
+        // 关流
+        writer.close();
     }
 }
