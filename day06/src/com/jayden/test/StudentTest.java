@@ -6,11 +6,9 @@ import com.jayden.studentManage.Service;
 import org.junit.jupiter.api.Test;
 
 class StudentTest {
-
-    private Student student = new Student();
-
     @Test
-    void test(){
+    void addTest(){
+        Student student = new Student();
         student.setAge(20);
         student.setId(1003);
         student.setName("王五");
@@ -18,5 +16,13 @@ class StudentTest {
         Service.addStudent(student);
     }
 
+    @Test
+    void removeTest(){
+        Service.removeStudent(1003);
+    }
 
+    @Test
+    void findTest(){
+        System.out.println(Service.findStudent(1004));
+    }
 }
