@@ -40,5 +40,4 @@ public class JdbcUtils {
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("name"), prop.getProperty("pwd"));
     }
-
 }
