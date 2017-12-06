@@ -37,7 +37,11 @@ public class JdbcUtils {
      * @return 返回得到得 Connection 对象。
      * @throws SQLException ,SQL 异常
      */
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("name"), prop.getProperty("pwd"));
+    public static Connection getConnection() {
+        try {
+            return DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("name"), prop.getProperty("pwd"));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
