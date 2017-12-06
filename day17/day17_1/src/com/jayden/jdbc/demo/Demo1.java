@@ -1,6 +1,8 @@
 package com.jayden.jdbc.demo;
 
-import org.junit.jupiter.api.Test;
+
+
+import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
