@@ -9,7 +9,7 @@ import java.sql.SQLException;
 /**
  * c3p0 连接池的使用
  */
-class Demo {
+class Demo1 {
     Connection getConnection() throws PropertyVetoException, SQLException {
         // 创建连接池对象
         ComboPooledDataSource ds = new ComboPooledDataSource();

@@ -8,8 +8,15 @@ import java.sql.SQLException;
 
 public class DemoTest {
     @Test
-    public void demoTest() throws PropertyVetoException, SQLException {
-        Connection conn = new Demo().getConnection();
+    public void demo1Test() throws PropertyVetoException, SQLException {
+        Connection conn = new Demo1().getConnection();
+        System.out.println(conn);
+        conn.close();
+    }
+
+    @Test
+    public void demo2Test() throws SQLException {
+        Connection conn = new Demo2().getConnection();
         System.out.println(conn);
         conn.close();
     }
