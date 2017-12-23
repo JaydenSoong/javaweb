@@ -3,10 +3,7 @@ package com.soong.javaweb.day18.demo;
 import com.soong.javaweb.day18.domain.Stu;
 import com.soong.javaweb.day18.utils.JdbcUtils;
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.apache.commons.dbutils.handlers.MapHandler;
-import org.apache.commons.dbutils.handlers.MapListHandler;
+import org.apache.commons.dbutils.handlers.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -44,5 +41,11 @@ public class DbutilsDemo {
         QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
         String sql = "SELECT * FROM stu";
         return qr.query(sql, new MapListHandler());
+    }
+
+    public Number count() throws SQLException {
+        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+        String sql = "SELECT count(*) FROM stu";
+        return qr.query(sql, new ScalarHandler<>());
     }
 }

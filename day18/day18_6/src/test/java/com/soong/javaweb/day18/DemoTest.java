@@ -21,9 +21,12 @@ public class DemoTest {
 //        List<Stu> list = new DbutilsDemo().findStu();
 //        System.out.println(list);
 
-       Map map = new DbutilsDemo().findStu2Map(1002);
-       System.out.println(map);
+//       Map map = new DbutilsDemo().findStu2Map(1002);
+//       System.out.println(map);
 //        List list = new DbutilsDemo().findStu2List();
 //        System.out.println(list);
+        Number number = new DbutilsDemo().count();
+        int count = number.intValue();
+        System.out.println(count);
     }
 }
